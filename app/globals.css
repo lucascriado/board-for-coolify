@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+/* ── CSS Variables — dark (padrão) ── */
+:root {
+  --bg: #0e0d1f;
+  --card-bg: rgba(20, 19, 38, 0.70);
+  --card-bg-solid: #14132a;
+  --surface-2: #1a1932;
+  --border: rgba(255,255,255,0.07);
+  --border-hover: rgba(255,255,255,0.13);
+  --text: #eceaf6;
+  --text-muted: #6a6890;
+  --text-dim: #9896b8;
+  --topbar-bg: rgba(14, 13, 31, 0.72);
+  --logs-bg: rgba(8, 7, 18, 0.80);
+  --logs-border: rgba(255,255,255,0.06);
+  --scrollbar-thumb: rgba(255,255,255,0.12);
+  --toggle-bg: rgba(255,255,255,0.06);
+  --icon-glow: drop-shadow(0 0 7px rgba(139, 92, 246, 0.55));
+  --icon-color: #a78bfa;
+  --server-icon-bg: linear-gradient(135deg, rgba(30,25,70,0.9), rgba(20,18,55,0.9));
+  --server-icon-border: rgba(255,255,255,0.08);
+  --purple: #7c3aed;
+  --purple-light: #a78bfa;
+  --green: #22c55e;
+  --red: #ef4444;
+  --yellow: #f59e0b;
+  --blue: #3b82f6;
+}
+
+/* ── CSS Variables — light ── */
+html.light {
+  --bg: #f9f8ff;
+  --card-bg: rgba(255, 255, 255, 0.88);
+  --card-bg-solid: #ffffff;
+  --surface-2: #f3f1fb;
+  --border: rgba(0,0,0,0.07);
+  --border-hover: rgba(0,0,0,0.13);
+  --text: #16142a;
+  --text-muted: #68668e;
+  --text-dim: #8e8cb2;
+  --topbar-bg: rgba(249, 248, 255, 0.85);
+  --logs-bg: rgba(243, 241, 255, 0.90);
+  --logs-border: rgba(0,0,0,0.06);
+  --scrollbar-thumb: rgba(0,0,0,0.12);
+  --toggle-bg: rgba(0,0,0,0.05);
+  --icon-glow: none;
+  --icon-color: #7c3aed;
+  --server-icon-bg: linear-gradient(135deg, #ede9ff, #e4e8ff);
+  --server-icon-border: rgba(124,58,237,0.15);
+}
+
+/* ── Gradiente dark: só nos cantos, não afeta o centro ── */
+html {
+  background:
+    radial-gradient(ellipse 38% 30% at 100% 0%,   rgba(100, 30, 200, 0.35) 0%, transparent 100%),
+    radial-gradient(ellipse 28% 22% at 0%   100%,  rgba(40,  20, 160, 0.20) 0%, transparent 100%),
+    #0e0d1f;
+  min-height: 100%;
+}
+
+/* ── Gradiente light: suave, só no canto superior ── */
+html.light {
+  background:
+    radial-gradient(ellipse 42% 32% at 100% 0%,   rgba(167, 139, 250, 0.18) 0%, transparent 70%),
+    #f9f8ff;
+}
+
+/* ── Base ── */
+* { box-sizing: border-box; }
+
+body {
+  min-height: 100vh;
+  color: var(--text);
+  font-family: var(--font-inter-tight), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-fustat), system-ui, sans-serif;
+}
+
+.topbar-logo {
+  filter: var(--icon-glow);
+  color: var(--icon-color);
+  font-size: 18px;
+  transition: filter 0.3s;
+}
+
+/* Ícone do servidor adapta ao tema */
+.server-icon {
+  background: var(--server-icon-bg);
+  border: 1px solid var(--server-icon-border);
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--purple); }
