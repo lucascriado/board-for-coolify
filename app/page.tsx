@@ -44,7 +44,7 @@ export default async function DashboardPage() {
       <div
         style={{
           borderBottom: '1px solid var(--border)',
-          padding: '0 32px',
+          padding: '0 clamp(16px, 4vw, 32px)',
           height: 56,
           display: 'flex',
           alignItems: 'center',
@@ -78,12 +78,12 @@ export default async function DashboardPage() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 1100, margin: '0 auto', padding: '32px 24px' }}>
+      <div style={{ maxWidth: 1100, margin: '0 auto', padding: 'clamp(20px, 5vw, 32px) clamp(16px, 4vw, 24px)' }}>
         {/* Cabeçalho */}
         <div style={{ marginBottom: 32 }}>
           <h1
             style={{
-              fontSize: 38,
+              fontSize: 'clamp(24px, 7vw, 38px)',
               fontWeight: 800,
               color: 'var(--text)',
               letterSpacing: '-0.04em',
@@ -136,7 +136,7 @@ export default async function DashboardPage() {
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(440px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(min(440px, 100%), 1fr))',
                 gap: 16,
               }}
             >
